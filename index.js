@@ -13,21 +13,19 @@ const app = express();
 //CORS
 app.use(cors());
 
+//lectura y parseo del body
+app.use( express.json() );
+
 // BAse de datos
 dbConnection();
 
-// iFVdbmVvHVnISi1I
-// willian
 
 //rutas
-app.get('/', (req, res) => {
-    res.json({
-        ok: true,
-        msg: 'Hola Mundo'
-    });
-});
+app.use('/api/usuarios', require('./routes/usuarios'));
+app.use('/api/login', require('./routes/auth'));
 
 
-app.listen(process.env.PORT), () => {
+
+app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en puerto ' + process.env.PORT);
-}
+});
