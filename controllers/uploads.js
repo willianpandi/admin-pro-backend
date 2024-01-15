@@ -84,9 +84,6 @@ const retornaImagen = (req, res = response ) => {
     res.sendFile( pathImg );
   }
 
-
-
-
 }
 
 module.exports = {
