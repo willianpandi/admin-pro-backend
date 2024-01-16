@@ -21,10 +21,8 @@ router.post('/', [
 
 router.put( '/:id', [
     validarJwt,
-    // check('nombre', 'El nombre es obligatorio').not().isEmpty(),
-    // check('email', 'El correo es obligatorio').isEmail(),
-    // check('role', 'El rol es obligatorio').not().isEmpty(),
-    // validarCampos,
+    check('nombre', 'El nombre del hosppital es obligatorio').not().isEmpty(),
+    validarCampos,
 ], updateHospitales );
 
 router.delete('/:id',  deleteHospitales)

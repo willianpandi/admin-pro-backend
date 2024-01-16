@@ -21,11 +21,10 @@ router.post('/', [
 ] ,creatMedicos );
 
 router.put( '/:id', [
-    
-    // check('nombre', 'El nombre es obligatorio').not().isEmpty(),
-    // check('email', 'El correo es obligatorio').isEmail(),
-    // check('role', 'El rol es obligatorio').not().isEmpty(),
-    // validarCampos,
+    validarJwt,
+    check('nombre', 'El nombre del medico es obligatorio').not().isEmpty(),
+    check('hospital', 'El hospital uuid debe de ser valido').isMongoId(),
+    validarCampos,
 ], updateMedicos );
 
 router.delete('/:id',  deleteMedicos)
