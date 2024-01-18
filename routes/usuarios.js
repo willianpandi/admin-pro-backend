@@ -10,7 +10,7 @@ const router = Router();
 router.get('/', validarJwt, getUsuarios );
 
 router.post('/', [
-    validarJwt,
+    // validarJwt,
     check('nombre', 'El nombre es obligatorio').not().isEmpty(),
     check('password', 'La contrasenia es obligatorio').not().isEmpty(),
     check('email', 'El correo es obligatorio').isEmail(),
